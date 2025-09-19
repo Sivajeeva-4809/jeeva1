@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>project 2</title>
+</head>
+<body>
+
+    <h1> Homework2</h1>
+    <script type="text/javascript" language="Javascript">
+        
+let contact1= {
+    name: 'Siva',
+    phone: '1234567890',
+    email: 'abc@gmail.com',
+    getInfo: function() {
+    return `Name: ${this.name} phone:${this.phone} Email: ${this.email}`;
+  }
+};
+let contact2={
+    name:'Jeeva',
+    phone:'9876543210',
+    email:'def@gmail.com',
+    getInfo: function() {
+    return `Name: ${this.name}  phone:${this.phone} Email: ${this.email}`;
+  }
+};
+function printContactInfo(contact) {
+  console.log(contact.getInfo());
+}
+console.log("--- Contact 1---");
+printContactInfo(contact1);
+
+console.log("--- Contact 2---");
+printContactInfo(contact2);
+
+    </script>
+
+</body>
+</html>
