@@ -1,0 +1,41 @@
+<!You are helping to build a feedback form for a basic website. When a user submits feedback, you receive a string that may contain extra spaces and mixed cases. Your task is to clean and process the feedback string so it can be stored or displayed neatly.
+var feedback = "   I loved the FOOD and the service!   ";
+
+Perform the following actions:
+
+Remove extra spaces at the beginning and end of the string.
+
+Convert the entire string to lowercase.
+
+Replace the word "food" with "ambience".
+
+Find and print the position of the word "service".
+
+Finally, convert the string to an array of words and print the array.-->
+
+
+
+<!DOCTYPE html>
+<html>
+  <title>Cw 3</title>
+<body>
+   <h1> Classwork3</h1>
+<script>
+var feedback ="I loved the FOOD and the service!."
+ console.log(feedback.replace(/food/i,"ambience"));
+ console.log(feedback.toLowerCase());
+ console.log(feedback.trim());
+ var x = feedback.search("service")
+console.log(x);
+var Arrays = feedback.split(' ');
+console.log(Arrays);
+
+  
+</script>
+
+</body>
+</html>
+
+ 
+
+  
