@@ -1,0 +1,47 @@
+<!--You are creating a simple game result generator for a beginner-level web game.
+Create a script that:
+Randomly picks a number between 1 and 50 (representing a mystery level).
+Takes a user input score (as a string, e.g., "45") and converts it into a number.
+Shows the absolute difference between the mystery level and the user's score.
+Calculates and logs the square root of the user’s score.
+Logs the value of Pi (?) using a math property.
+Uses implicit conversion to multiply the string "20" by 5.
+Uses the Math.max() and Math.min() methods to display the highest and lowest values among 10, 20, and the mystery level.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HW4</title>
+</head>
+<body>
+  <h1> homework4</h1>
+  <script type="text/javascript" language="Javascript">
+    let mystery = Math.floor(Math.random()*50);
+    console.log("mysterylevel is:",mystery);
+    let userscore = "10";
+    let num2 = Number(userscore);
+    console.log("userscore:",userscore);
+    let difference = Math.abs(mystery - userscore);
+    console.log("abs difference:",difference);
+    let sqrt = Math.sqrt(userscore);
+    console.log("sqrt is:", sqrt);
+    let log = Math.log(userscore);
+    console.log("log is:",log);
+    let PI = Math.PI;
+    console.log("pi value:",PI);
+    let logpi = Math.log(PI);
+    console.log("log pi value:", logpi);
+    let str1 = "20";
+    let str2 = Number(str1*5);
+    console.log("str2 is;", str2);
+    let min = Math.min(10,20,mystery);
+    console.log("min is",min);
+    let max = Math.max(10,20,mystery);
+    console.log("max is",max);
+    
+  </script>
+
+</body>
+</html>
