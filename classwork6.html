@@ -1,0 +1,59 @@
+<!--You are helping design a simple product listing feature for an online grocery store. You have an array of product names and an array of their prices. Your tasks are:
+
+Merge the product names and prices into one array in the format: "Product: Apple - Price: 50"
+
+Display all product entries using a loop.
+
+Filter and show only the products with prices greater than 50.
+
+Add a new product "Watermelon" with price 80 to the list, and then display the updated product list.-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CW 6</title>
+</head>
+<body>
+  <h1>Classwork 6</h1>
+  <script type="text/javascript" language="Javascript">
+let productNames = ["Apple", "Orange", "Banana", "Grape", "Melon"];
+let productPrices = [50, 60, 30, 70, 40];
+console.log("productname:",productNames);
+console.log("price:",productPrices);
+
+let Product = productNames.map((name, index) => {
+    return `Product: ${name} - Price: ${productPrices[index]}`;
+});
+
+console.log("Product:",Product);
+
+for (let item of Product) {
+    console.log(item);
+}
+
+let highpriceprdt= productNames.filter((name, index) => {
+    return productPrices[index] > 50;
+});
+
+console.log("price(>50):", highpriceprdt);
+
+let newProductName = "Watermelon";
+let newProductPrice = 80;
+
+productNames.push(newProductName);
+productPrices.push(newProductPrice);
+
+let newProducts = productNames.map((name, index) => {
+    return `Product: ${name} - Price: ${productPrices[index]}`;
+});
+
+console.log("new prdts:",newProducts);
+for (let item of newProducts) {
+    console.log(item);
+}
+
+  </script>
+
+</body>
+</html>
