@@ -1,0 +1,58 @@
+<!-- You are building a simple birthday tracker for your friends. You need to:
+Create an object named friend with properties: name and birthDate (in the format YYYY-MM-DD).
+
+Write a function getBirthdayDetails that:
+    Accepts the friend object as input,
+    onverts the birthDate string into a date,
+    Extracts and prints the year, month name, and day of the month,
+    Calculates how many years old the friend is as of today.
+Display the result in the format:
+ "John was born on 5 July, 1999 and is 25 years old."-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cw 7</title>
+</head>
+<body>
+  <h1>Classwork 7</h1>
+  <script type="text/javascript" language="Javascript">
+let friend = {
+    name: "John",
+    birthDate: "1999-07-05"
+};
+
+function getBirthdayDetails(friendObj) {
+    let monthNames = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    let birthDateObj = new Date(friendObj.birthDate);
+    
+    // Fixed reference date: October 2, 2025
+    let today = new Date('2025-10-02');
+
+    let year = birthDateObj.getFullYear();
+    let monthName = monthNames[birthDateObj.getMonth()];
+    let dayOfMonth = birthDateObj.getDate();
+
+    // Age calculation
+    let age = today.getFullYear() - birthDateObj.getFullYear();
+    let monthDifference = today.getMonth() - birthDateObj.getMonth();
+
+    // Adjust age if birthday hasn't passed this year
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDateObj.getDate())) {
+        age--;
+    }
+
+    let output = `${friendObj.name} was born on ${dayOfMonth} ${monthName}, ${year} and is ${age} years old.`;
+    
+    console.log(output);
+}
+
+getBirthdayDetails(friend);
+  </script>
+</body>
+</html>

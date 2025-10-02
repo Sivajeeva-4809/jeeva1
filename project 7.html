@@ -1,0 +1,75 @@
+<!--Create a simple web-based event reminder tool. The page should take a user's input of a past date (for example, their last birthday) and display:
+The year, month (name, not number), and day of that date.
+How many full years have passed since that date.
+A custom message that says:
+“It has been more than a year since that date.”
+or “It has been less than a year since that date.”-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HW 7</title>
+</head>
+<body>
+  <h1>Homework 7</h1>
+  <label for="eventDate">Enter a Past Date:</label>
+  <input type="date" id="eventDate">
+  <button onclick="calculateReminder()">Get Details</button>
+
+  <div id="resultOutput">
+    <p>Select a date and click 'Get Details' to see the reminder.</p>
+  </div>
+
+  <script type="text/javascript" language="Javascript">
+let monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+function calculateReminder() {
+    let dateString = document.getElementById('eventDate').value;
+    let outputElement = document.getElementById('resultOutput');
+
+    if (!dateString) {
+        outputElement.innerHTML = "<p>Please select a valid date.</p>";
+        return;
+    }
+
+    let eventDate = new Date(dateString);
+    let today = new Date();
+    
+    if (isNaN(eventDate.getTime()) || eventDate >= today) {
+        outputElement.innerHTML = "<p>Please enter a valid date that is in the past.</p>";
+        return;
+    }
+
+    let year = eventDate.getFullYear();
+    let monthName = monthNames[eventDate.getMonth()];
+    let dayOfMonth = eventDate.getDate();
+
+    let yearsPassed = today.getFullYear() - eventDate.getFullYear();
+    
+    let monthDifference = today.getMonth() - eventDate.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < eventDate.getDate())) {
+        yearsPassed--;
+    }
+
+    let oneYearCheck = yearsPassed >= 1;
+    let customMessage = oneYearCheck
+        ? "It has been more than a year since that date."
+        : "It has been less than a year since that date.";
+
+    let output = `
+        <p><strong>Date Details:</strong> ${dayOfMonth} ${monthName}, ${year}</p>
+        <p><strong>Full Years Passed:</strong> ${yearsPassed}</p>
+        <p class="status-message" style="color: ${oneYearCheck ? 'green' : '#cc8000'};">
+          ${customMessage}
+        </p>
+    `;
+    
+    outputElement.innerHTML = output;
+}
+  </script>
+</body>
+</html>
