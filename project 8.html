@@ -1,0 +1,71 @@
+<!--You are building a simple input system for a small game. The game gives players 5 chances to guess a number between 1 and 5. The game should work like this:
+Ask the player to enter a number between 1 and 5.
+If the number is 3, display: "You guessed it right!" and stop the game.
+If the number is not 3, display: "Wrong guess. Try again."
+If the player enters a number outside the range (not 1 to 5), display "Invalid input" and skip that chance using continue.
+If the player doesn’t guess the correct number within 5 valid chances, display "Game over".
+You must use:
+A loop
+An if-else statement
+A break statement
+A continue statement
+A switch to display the number they entered in words (e.g., 1 = "One")-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homework 8</title>
+</head>
+<body>
+    <h1>Homework 8</h1>
+    <script type="text/javascript" language="Javascript">
+        let num = parseInt(prompt("Enter a number between 1 and 5:"));
+        let i = 0;
+
+
+        if (num === 3) {
+        console.log("You guessed it right!");
+    } else {
+        console.log("Wrong guess. Try again.");
+    }
+
+    if (i === 5) {
+        console.log("Game over");
+    }
+
+
+for (let i = 1; i <= 5; i++) {
+
+    if (num < 1 || num > 5 || isNaN(num)) {
+        console.log("Invalid input");
+        continue; 
+    }
+
+    
+    switch (num) {
+        case 1:
+            console.log("You entered: One");
+            break;
+        case 2:
+            console.log("You entered: Two");
+            break;
+        case 3:
+            console.log("You entered: Three");
+            break;
+        case 4:
+            console.log("You entered: Four");
+            break;
+        case 5:
+            console.log("You entered: Five");
+            break;
+    }
+
+    
+    }
+
+
+    </script>
+
+</body>
+</html>
