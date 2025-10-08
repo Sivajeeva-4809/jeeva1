@@ -1,0 +1,30 @@
+<!--You have some information from a user in JSON format, including their name, email, and message. Your job is to:
+Convert this JSON text into a JavaScript object.
+Write a named arrow function that tries to print "Message received from <name>".
+If something goes wrong (like the JSON is broken), show an error message.
+Run the function to show the result in the console.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Classwork 10</title>
+</head>
+<body>
+	<h1>Classwork 10</h1>
+	<script type="text/javascript">
+		let user = { name: "Sivajeeva Raj P", email: "priyajeeva.in@gmail.com", message: "Hi, I'm Siva" };
+		let show =() => {
+			try{
+        let string = JSON.stringify(user);   
+        let obj = JSON.parse(string);
+        console.log(`"message is:",${obj.message}`);   }
+        catch (err) { console.error("error is:",err.message);} 
+        };
+        show();
+        
+		
+	</script>
+
+</body>
+</html>
