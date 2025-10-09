@@ -1,0 +1,65 @@
+<!--You are building a basic user system. Each user has a name, age, and email. Your task is to:
+Create a User class that stores these values.
+Use getter methods to access name and age.
+Use a setter method to safely update the email (only allow setting if the email contains an @ symbol).
+Use the this keyword correctly in all functions.
+Create an object from the class, try updating the email using both a correct and incorrect format, and print out all the user details using getter methods.-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Homework 10</title>
+</head>
+<body>
+<h1> Homework 10</h1>
+<script type="text/javascript">
+	class User {
+    constructor(name, age, email) {
+        this._name = name;
+        this._age = age;
+        this._email = email;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    get age() {
+        return this._age;
+    }
+    
+
+    set email(newEmail) {
+        if (typeof newEmail === 'string' && newEmail.includes('@')) {
+            this._email = newEmail;
+            console.log(` Email updated successfully to: ${newEmail}`);
+        } else {
+            console.log(` Invalid email format for ${this._name}. Email must contain '@'. Current email remains: ${this._email}`);
+        }
+    }
+    
+    printDetails() {
+        console.log(` User Details`);
+        console.log(`Name: ${this.name}`); 
+        console.log(`Age: ${this.age}`);
+        console.log(`Email: ${this.email}`);
+       
+    }
+}
+
+const userProfile = new User("Siva", 12, "priyajeeva.in@gmail.com");
+
+userProfile.printDetails();
+
+console.log("Testing");
+userProfile.email = "sivapriya.in"; 
+
+console.log("\n--- Testing Correct Email Update ---");
+userProfile.email = "sivapriya.in@gmail.com"; 
+
+userProfile.printDetails();
+	
+</script>
+</body>
+</html>
